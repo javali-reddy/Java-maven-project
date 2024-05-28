@@ -7,8 +7,9 @@ pipeline{
 
     stages{
         stage('Build phase'){
+            steps{
             sh 'mvn build'
-
+            }
         }
 
     }
