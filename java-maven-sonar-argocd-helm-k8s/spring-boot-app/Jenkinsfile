@@ -6,6 +6,11 @@ pipeline{
     }
 
     stages{
+        stage('Git checkout'){
+            steps{
+                git branch: 'main', url: 'https://github.com/javali-reddy/Java-maven-project.git'
+            }
+        }
         stage('Build phase'){
             steps{
             sh 'java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn build'
