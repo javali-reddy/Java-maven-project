@@ -8,7 +8,7 @@ pipeline{
     stages{
         stage('Build phase'){
             steps{
-            sh 'mvn build'
+            sh 'java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn build'
             }
         }
 
