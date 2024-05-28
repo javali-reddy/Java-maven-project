@@ -9,13 +9,13 @@ pipeline{
         stage('Git checkout'){
             steps{
                 echo "git checkout"
-               // git branch: 'main', url: 'https://github.com/javali-reddy/Java-maven-project.git'
+               git branch: 'main', url: 'https://github.com/javali-reddy/Java-maven-project.git'
             }
         }
         stage('Build phase'){
             steps{
                 echo "maven build"
-            //sh 'java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn build'
+            sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn build'
             }
         }
 
