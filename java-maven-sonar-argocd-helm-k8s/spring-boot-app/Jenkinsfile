@@ -21,7 +21,7 @@ pipeline{
 
         stage('code quality analysis'){
             steps{
-                withCredentials([string(credentialsId: 'sonarqube', variable: 'sonarqube_cred')]) {
+                withCredentials([string(credentialsId: 'sonarqube_cred', variable: 'sonarqube_cred')]) {
                     sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn sonar:sonar -Dsonar.login=$sonarqube_cred -Dsonar.host.url=http://44.200.61.56:9090/'
         }
 }
